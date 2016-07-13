@@ -1,0 +1,79 @@
+<!Doctype html> 
+<html lang="pt-br">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+  <link rel="stylesheet" href="https://material.angularjs.org/1.0.0/angular-material.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+  <style>
+    md-sidenav  {
+      width: 110px;height:100%;
+      padding:20px;
+      background-color: #6bc7cc;
+    }
+
+    md-content {
+      background-color : tan;
+      height:100%;
+      padding:20px;
+    }
+
+    .md-toolbar-tools h1 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: inherit;
+    }
+  </style>
+</head>
+<body ng-app="BlankApp" layout="row" ng-controller="AppCtrl" ng-cloak>
+  <!--
+    Your HTML content here
+  -->  
+  <md-toolbar layout="row">
+      <div class="md-toolbar-tools">
+        <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
+          <md-icon aria-label="Menu" md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
+        </md-button>
+        <h1>Hello World</h1>
+      </div>
+    </md-toolbar>
+   <md-sidenav layout="column" class="sidenav1" md-is-locked-open='true'>
+   SideNav
+   </md-sidenav>
+  
+  <md-content flex layout="column">
+    <ng-view>
+      View Content
+    </ng-view>
+  </md-content>
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+  
+  <!-- Your application bootstrap  -->
+  <script type="text/javascript">    
+    /**
+     * You must include the dependency on 'ngMaterial' 
+     */
+    angular.module('BlankApp', ['ngMaterial']);
+    var app = angular.module('StarterApp', ['ngMaterial']);
+
+    app.controller('AppCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav){
+  
+ 
+}]);
+  </script>
+ 
+</body>
+</html>
+
+<!--
+Copyright 2016 Google Inc. All Rights Reserved. 
+Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at http://material.angularjs.org/license.
+-->
